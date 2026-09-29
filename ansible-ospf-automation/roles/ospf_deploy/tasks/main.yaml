@@ -1,0 +1,9 @@
+---
+- name: Applying OSPF configuration from jinja2 template
+  cisco.ios.ios_config:
+    src: ospf_config.j2
+    match: line
+    save_when: changed
+  vars:
+    ansible_command_timeout: 180
+    ansible_connect_timeout: 60

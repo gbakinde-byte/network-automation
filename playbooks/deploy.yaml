@@ -1,9 +1,0 @@
----
-
-- name: Configuring Routers 
-  hosts: Routers
-  gather_facts: false
-
-
-  tasks:
-    - name: 

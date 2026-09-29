@@ -1,0 +1,8 @@
+---
+
+- name: Deploy OSPF Configuration
+  hosts: routers
+  gather_facts: false
+
+  roles:
+    - ospf_deploy

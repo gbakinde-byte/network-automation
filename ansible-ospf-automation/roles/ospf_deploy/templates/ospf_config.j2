@@ -1,0 +1,11 @@
+hostname {{ inventory_hostname }}
+
+interface {{ ospf_interface }}
+ ip address {{ ip_address }} {{ subnet_mask }}
+ ip ospf {{ ospf_process }} area {{ ospf_area }}
+
+router ospf {{ ospf_process }}
+ router-id {{ ospf_router_id }}
+{% for intf in passive_interfaces | default([]) %}
+ passive-interface {{ intf }}
+{% endfor %}

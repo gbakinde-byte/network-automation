@@ -1,0 +1,26 @@
+---
+
+- name: Checking New Configuration
+  hosts: routers
+  gather_facts: false
+
+  tasks:
+    - name: Show interfaces
+      cisco.ios.ios_command:
+        commands:
+          - show ip interface brief
+      register: intf_output
+
+    - name: Display router version
+      ansible.builtin.debug:
+        var: intf_output.stdout
+
+    - name: Show OSPF information
+      cisco.ios.ios_command:
+        commands:
+          - show ip route ospf
+      register: ospf_output
+
+    - name: Display OSPF Routes
+      ansible.builtin.debug:
+        var: ospf_output.stdout

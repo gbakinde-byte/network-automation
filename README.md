@@ -1,2 +1,4 @@
-# network-automation
-Main repository for network automation projects. Contains an Ansible OSPF automation sub-repo as a submodule.
+# Network Automation
+
+Main repository for network automation projects.
+Contains the OSPF automation project under `ansible-ospf-automation/`.
