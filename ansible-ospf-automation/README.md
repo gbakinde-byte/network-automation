@@ -11,8 +11,7 @@ This project was built as a hands-on network automation exercise to practice mov
 The goal is to automate the configuration of OSPF across multiple Cisco routers. The playbook handles:
 
 - Hostname configuration
-- Interface configuration and IP addressing
-- OSPF interface configuration
+- IP addressing and OSPF enablement on one interface per router (`ospf_interface`)
 - OSPF router IDs and areas
 - Passive interfaces
 - Configuration templating with Jinja2
@@ -62,15 +61,24 @@ The inventory (`inventory/hosts.ini`) lists the routers Ansible manages: R1, R2 
 
 ### 2. Variables
 
-Router-specific values live in `host_vars/` instead of being hard-coded in the template. Example:
+Router-specific values live in `inventory/host_vars/` instead of being hard-coded in the template. Example (`R1.yaml`):
 
 ```yaml
-ospf_interface: GigabitEthernet0/2
-ip_address: 11.0.0.1
-subnet_mask: 255.255.255.0
-ospf_process: 1
+ospf_interface: "GigabitEthernet0/2"
+ip_address: "11.0.0.1"
+subnet_mask: "255.255.255.0"
+ospf_router_id: "1.1.1.1"
+passive_interfaces:
+  - "Loopback0"
+  - "GigabitEthernet0/2"
+```
+
+Values shared by every router live in `inventory/group_vars/routers.yml`:
+
+```yaml
+ospf_process: 5
 ospf_area: 0
-ospf_router_id: 1.1.1.1
+expected_ospf_neighbors: 2
 ```
 
 ### 3. Jinja2 template
@@ -142,23 +150,31 @@ ansible-galaxy collection install -r requirements.yml
 
 ### 4. Configure the inventory
 
-Update `inventory/hosts.ini` and the files in `host_vars/` with the IP addresses and connection details for your routers. Do not commit real passwords (see the security note below).
+Update `inventory/hosts.ini` and the files in `inventory/host_vars/` with the IP addresses and connection details for your routers. Do not commit real passwords (see the security note below).
 
 ### 5. Test connectivity
 
+`hosts.ini` sets only the username, so Ansible asks for the password with `-k`:
+
 ```bash
-ansible routers -m cisco.ios.ios_command -a "commands='show version'"
+ansible routers -m cisco.ios.ios_command -a "commands='show version'" -k
 ```
 
 ### 6. Run the playbook
 
 ```bash
-ansible-playbook playbooks/deploy.yaml
+ansible-playbook playbooks/deploy.yaml -k
 ```
 
 ### 7. Verify
 
-Run `playbooks/verify.yaml`, or check directly on the routers:
+Run the verification playbook. It prints the OSPF neighbors and routes and fails if a router does not have the expected number of FULL neighbors:
+
+```bash
+ansible-playbook playbooks/verify.yaml -k
+```
+
+You can also check directly on the routers:
 
 ```
 show ip ospf neighbor
@@ -170,9 +186,9 @@ show running-config
 
 The expected result is that the routers form OSPF neighbor relationships and learn OSPF routes.
 
-## Sample output
+## Related project
 
-[Add a screenshot of a successful deploy run and the `PLAY RECAP`, plus `show ip ospf neighbor` from one router.]
+[`network_validation_pyATS`](../network_validation_pyATS) validates the resulting network (interfaces, OSPF neighbors, routing table and end-to-end pings) against expected state defined in YAML.
 
 ## What I learned
 
@@ -186,8 +202,9 @@ The expected result is that the routers form OSPF neighbor relationships and lea
 
 - Automate more OSPF parameters
 - Support multiple network vendors
-- Add configuration validation and automated pre-checks and post-checks
-- Add pyATS verification
+- Loop over a list of interfaces in `host_vars` so the template can configure every link, not just one
+- Replace `ios_config` with the `cisco.ios` resource modules for interfaces and OSPF
+- Add automated pre-checks and post-checks
 - Add CI/CD for the Ansible project
 - Expand the topology
 - Automate network documentation

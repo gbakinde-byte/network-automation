@@ -1,0 +1,38 @@
+devices:
+  R1:
+    os: ios
+    type: ios
+    connections:
+      cli:
+        protocol: ssh
+        port: 22
+        ip: 192.168.90.1
+    credentials:
+      default:
+        username: %ENV{PYATS_USER}
+        password: %ENV{PYATS_PASS}
+  
+  R2:
+    os: ios
+    type: ios
+    connections:
+      cli:
+        protocol: ssh
+        port: 22
+        ip: 192.168.90.2
+    credentials:
+      default:
+        username: %ENV{PYATS_USER}
+        password: %ENV{PYATS_PASS}
+  R3:
+    os: ios
+    type: ios
+    connections:
+      cli:
+        protocol: ssh
+        port: 22
+        ip: 192.168.90.4
+    credentials:
+      default:
+        username: %ENV{PYATS_USER}
+        password: %ENV{PYATS_PASS}

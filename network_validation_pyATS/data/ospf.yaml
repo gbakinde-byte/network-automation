@@ -1,0 +1,28 @@
+routers:
+  R1:
+    router_id: "1.1.1.1"
+    area: "0"
+    neighbors:
+    - neighbor_id: "2.2.2.2"
+      state: "full"
+    - neighbor_id: "3.3.3.3"
+      state: "full"
+
+  R2:
+    router_id: "2.2.2.2"
+    area: "0"
+    neighbors:
+    - neighbor_id: "1.1.1.1"
+      state: "full"
+    - neighbor_id: "3.3.3.3"
+      state: "full"
+
+
+  R3:
+    router_id: "3.3.3.3"
+    area: "0"
+    neighbors:
+    - neighbor_id: "1.1.1.1"
+      state: "full"
+    - neighbor_id: "2.2.2.2"
+      state: "full"

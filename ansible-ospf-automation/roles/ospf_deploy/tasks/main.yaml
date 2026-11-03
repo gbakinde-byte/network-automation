@@ -1,5 +1,12 @@
 ---
+- name: Make sure the OSPF interface is enabled
+  cisco.ios.ios_interfaces:
+    config:
+      - name: "{{ ospf_interface }}"
+        enabled: true
+    state: merged
 - name: Applying OSPF configuration from jinja2 template
+
   cisco.ios.ios_config:
     src: ospf_config.j2
     match: line

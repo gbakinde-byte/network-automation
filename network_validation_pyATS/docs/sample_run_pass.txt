@@ -1,0 +1,314 @@
+2026-11-03T15:53:23: %EASYPY-INFO: Starting job run: validation_job
+2026-11-03T15:53:23: %EASYPY-INFO: Runinfo directory: /home/omokida/.pyats/runinfo/validation_job_2026Nov03_15_53_22_725327
+2026-11-03T15:53:23: %EASYPY-INFO: --------------------------------------------------------------------------------
+2026-11-03T15:53:32: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:32: %EASYPY-INFO: |                          Bringup/Clean Information                           |
+2026-11-03T15:53:32: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:32: %EASYPY-INFO: {'bringup': {}, 'cleaners': {}, 'devices': {}}
+
+2026-11-03T15:53:32: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:32: %EASYPY-INFO: |           Bringup/Clean Information after applying clean templates           |
+2026-11-03T15:53:32: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:32: %EASYPY-INFO: {'bringup': {}, 'cleaners': {}, 'devices': {}}
+
+2026-11-03T15:53:32: %ATS-INFO: Checking all devices are up and ready is disabled, '--check-all-devices-up' must be set to True in case of pyats runs or '-check_all_devices_up' set to True in case of legacy easypy runs
+<module 'pyats.easypy.jobs.validation_job' from '/home/omokida/100days-pyats/network_validation_pyATS/jobs/validation_job.py'>
+2026-11-03T15:53:32: %EASYPY-INFO: Starting task execution: connectivity
+2026-11-03T15:53:32: %EASYPY-INFO:     test harness = pyats.aetest
+2026-11-03T15:53:32: %EASYPY-INFO:     testscript   = /home/omokida/100days-pyats/network_validation_pyATS/tests/test_connectivity.py
+<module 'pyats.aetest.testscript.test_connectivity' from '/home/omokida/100days-pyats/network_validation_pyATS/tests/test_connectivity.py'>
+2026-11-03T15:53:32: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:32: %AETEST-INFO: |                      Starting testcase TestConnectivity                      |
+2026-11-03T15:53:32: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:32: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:32: %AETEST-INFO: |                         Starting section setup_test                          |
+2026-11-03T15:53:32: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:32: %AETEST-INFO: The result of section setup_test is => PASSED
+2026-11-03T15:53:32: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:32: %AETEST-INFO: |                        Starting section connectivity                         |
+2026-11-03T15:53:32: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:45: %AETEST-INFO: Passed reason: Successfully connected to all devices.
+2026-11-03T15:53:45: %AETEST-INFO: The result of section connectivity is => PASSED
+2026-11-03T15:53:45: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:45: %AETEST-INFO: |                           Starting section cleanup                           |
+2026-11-03T15:53:45: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:53:45: %SCRIPT-INFO: Disconnecting from R1
+2026-11-03T15:53:56: %SCRIPT-INFO: Disconnecting from R2
+2026-11-03T15:54:08: %SCRIPT-INFO: Disconnecting from R3
+2026-11-03T15:54:19: %AETEST-INFO: The result of section cleanup is => PASSED
+2026-11-03T15:54:19: %AETEST-INFO: The result of testcase TestConnectivity is => PASSED
+2026-11-03T15:54:19: %EASYPY-INFO: Starting task execution: interfaces
+2026-11-03T15:54:19: %EASYPY-INFO:     test harness = pyats.aetest
+2026-11-03T15:54:19: %EASYPY-INFO:     testscript   = /home/omokida/100days-pyats/network_validation_pyATS/tests/test_interfaces.py
+<module 'pyats.aetest.testscript.test_interfaces' from '/home/omokida/100days-pyats/network_validation_pyATS/tests/test_interfaces.py'>
+2026-11-03T15:54:19: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:54:19: %AETEST-INFO: |                    Starting testcase InterfaceValidation                     |
+2026-11-03T15:54:19: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:54:19: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:54:19: %AETEST-INFO: |                         Starting section setup_test                          |
+2026-11-03T15:54:19: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:54:27: %AETEST-INFO: The result of section setup_test is => PASSED
+2026-11-03T15:54:27: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:54:27: %AETEST-INFO: |                       Starting section test_interfaces                       |
+2026-11-03T15:54:27: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:54:27: %SCRIPT-INFO: Validating interfaces on R1
+2026-11-03T15:54:29: %SCRIPT-INFO: SUCCESS: R1 GigabitEthernet0/0 [status=up, proto=up, ip=192.168.134.130]
+2026-11-03T15:54:29: %SCRIPT-INFO: SUCCESS: R1 GigabitEthernet0/1 [status=up, proto=up, ip=10.10.10.1]
+2026-11-03T15:54:29: %SCRIPT-INFO: SUCCESS: R1 GigabitEthernet0/2 [status=up, proto=up, ip=10.10.10.5]
+2026-11-03T15:54:29: %SCRIPT-INFO: SUCCESS: R1 GigabitEthernet0/3 [status=up, proto=up, ip=11.0.0.1]
+2026-11-03T15:54:29: %SCRIPT-INFO: SUCCESS: R1 Loopback0 [status=up, proto=up, ip=192.168.90.1]
+2026-11-03T15:54:29: %SCRIPT-INFO: Validating interfaces on R2
+2026-11-03T15:54:30: %SCRIPT-INFO: SUCCESS: R2 GigabitEthernet0/0 [status=up, proto=up, ip=10.10.10.2]
+2026-11-03T15:54:30: %SCRIPT-INFO: SUCCESS: R2 GigabitEthernet0/1 [status=up, proto=up, ip=10.10.10.9]
+2026-11-03T15:54:30: %SCRIPT-INFO: SUCCESS: R2 GigabitEthernet0/2 [status=up, proto=up, ip=12.0.0.1]
+2026-11-03T15:54:30: %SCRIPT-INFO: SUCCESS: R2 Loopback0 [status=up, proto=up, ip=192.168.90.2]
+2026-11-03T15:54:30: %SCRIPT-INFO: Validating interfaces on R3
+2026-11-03T15:54:30: %SCRIPT-INFO: SUCCESS: R3 GigabitEthernet0/0 [status=up, proto=up, ip=10.10.10.6]
+2026-11-03T15:54:30: %SCRIPT-INFO: SUCCESS: R3 GigabitEthernet0/1 [status=up, proto=up, ip=10.10.10.10]
+2026-11-03T15:54:30: %SCRIPT-INFO: SUCCESS: R3 GigabitEthernet0/2 [status=up, proto=up, ip=13.0.0.1]
+2026-11-03T15:54:30: %SCRIPT-INFO: SUCCESS: R3 Loopback0 [status=up, proto=up, ip=192.168.90.5]
+2026-11-03T15:54:30: %AETEST-INFO: Passed reason: All interface validations passed successfully.
+2026-11-03T15:54:30: %AETEST-INFO: The result of section test_interfaces is => PASSED
+2026-11-03T15:54:30: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:54:30: %AETEST-INFO: |                           Starting section cleanup                           |
+2026-11-03T15:54:30: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:54:31: %SCRIPT-INFO: Disconnecting from R1
+2026-11-03T15:54:42: %SCRIPT-INFO: Disconnecting from R2
+2026-11-03T15:54:53: %SCRIPT-INFO: Disconnecting from R3
+2026-11-03T15:55:04: %AETEST-INFO: The result of section cleanup is => PASSED
+2026-11-03T15:55:04: %AETEST-INFO: The result of testcase InterfaceValidation is => PASSED
+2026-11-03T15:55:05: %EASYPY-INFO: Starting task execution: ospf
+2026-11-03T15:55:05: %EASYPY-INFO:     test harness = pyats.aetest
+2026-11-03T15:55:05: %EASYPY-INFO:     testscript   = /home/omokida/100days-pyats/network_validation_pyATS/tests/test_ospf.py
+<module 'pyats.aetest.testscript.test_ospf' from '/home/omokida/100days-pyats/network_validation_pyATS/tests/test_ospf.py'>
+2026-11-03T15:55:05: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:05: %AETEST-INFO: |                       Starting testcase OSPFValidation                       |
+2026-11-03T15:55:05: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:05: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:05: %AETEST-INFO: |                         Starting section setup_test                          |
+2026-11-03T15:55:05: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:15: %AETEST-INFO: The result of section setup_test is => PASSED
+2026-11-03T15:55:15: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:15: %AETEST-INFO: |                    Starting section test_ospf_validation                     |
+2026-11-03T15:55:15: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:15: %SCRIPT-INFO: Validating OSPF on R1
+2026-11-03T15:55:16: %SCRIPT-INFO: SUCCESS: R1 router ID is 1.1.1.1
+2026-11-03T15:55:17: %SCRIPT-INFO: SUCCESS: R1 OSPF interfaces are all in area 0
+2026-11-03T15:55:17: %SCRIPT-INFO: SUCCESS: R1 neighbor 2.2.2.2 is full
+2026-11-03T15:55:17: %SCRIPT-INFO: SUCCESS: R1 neighbor 3.3.3.3 is full
+2026-11-03T15:55:17: %SCRIPT-INFO: Validating OSPF on R2
+2026-11-03T15:55:18: %SCRIPT-INFO: SUCCESS: R2 router ID is 2.2.2.2
+2026-11-03T15:55:18: %SCRIPT-INFO: SUCCESS: R2 OSPF interfaces are all in area 0
+2026-11-03T15:55:19: %SCRIPT-INFO: SUCCESS: R2 neighbor 1.1.1.1 is full
+2026-11-03T15:55:19: %SCRIPT-INFO: SUCCESS: R2 neighbor 3.3.3.3 is full
+2026-11-03T15:55:19: %SCRIPT-INFO: Validating OSPF on R3
+2026-11-03T15:55:19: %SCRIPT-INFO: SUCCESS: R3 router ID is 3.3.3.3
+2026-11-03T15:55:20: %SCRIPT-INFO: SUCCESS: R3 OSPF interfaces are all in area 0
+2026-11-03T15:55:20: %SCRIPT-INFO: SUCCESS: R3 neighbor 1.1.1.1 is full
+2026-11-03T15:55:20: %SCRIPT-INFO: SUCCESS: R3 neighbor 2.2.2.2 is full
+2026-11-03T15:55:20: %AETEST-INFO: Passed reason: All OSPF validations passed successfully.
+2026-11-03T15:55:20: %AETEST-INFO: The result of section test_ospf_validation is => PASSED
+2026-11-03T15:55:20: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:20: %AETEST-INFO: |                           Starting section cleanup                           |
+2026-11-03T15:55:20: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:21: %SCRIPT-INFO: Disconnecting from R1
+2026-11-03T15:55:32: %SCRIPT-INFO: Disconnecting from R2
+2026-11-03T15:55:43: %SCRIPT-INFO: Disconnecting from R3
+2026-11-03T15:55:54: %AETEST-INFO: The result of section cleanup is => PASSED
+2026-11-03T15:55:54: %AETEST-INFO: The result of testcase OSPFValidation is => PASSED
+2026-11-03T15:55:55: %EASYPY-INFO: Starting task execution: routing
+2026-11-03T15:55:55: %EASYPY-INFO:     test harness = pyats.aetest
+2026-11-03T15:55:55: %EASYPY-INFO:     testscript   = /home/omokida/100days-pyats/network_validation_pyATS/tests/test_routing.py
+<module 'pyats.aetest.testscript.test_routing' from '/home/omokida/100days-pyats/network_validation_pyATS/tests/test_routing.py'>
+2026-11-03T15:55:55: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:55: %AETEST-INFO: |                   Starting testcase RoutingTableValidation                   |
+2026-11-03T15:55:55: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:55: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:55:55: %AETEST-INFO: |                         Starting section setup_test                          |
+2026-11-03T15:55:55: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:03: %AETEST-INFO: The result of section setup_test is => PASSED
+2026-11-03T15:56:03: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:03: %AETEST-INFO: |                     Starting section test_routing_table                      |
+2026-11-03T15:56:03: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:03: %SCRIPT-INFO: Validating routing table on R1
+2026-11-03T15:56:05: %SCRIPT-INFO: SUCCESS: Prefix 10.10.10.0/30 found with protocol 'connected'.
+2026-11-03T15:56:05: %SCRIPT-INFO: SUCCESS: Prefix 10.10.10.4/30 found with protocol 'connected'.
+2026-11-03T15:56:05: %SCRIPT-INFO: SUCCESS: Prefix 10.10.10.8/30 found with protocol 'ospf'.
+2026-11-03T15:56:05: %SCRIPT-INFO: SUCCESS: Prefix 11.0.0.0/24 found with protocol 'connected'.
+2026-11-03T15:56:05: %SCRIPT-INFO: SUCCESS: Prefix 12.0.0.0/24 found with protocol 'ospf'.
+2026-11-03T15:56:05: %SCRIPT-INFO: SUCCESS: Prefix 13.0.0.0/24 found with protocol 'ospf'.
+2026-11-03T15:56:05: %SCRIPT-INFO: SUCCESS: Prefix 192.168.134.0/24 found with protocol 'connected'.
+2026-11-03T15:56:05: %SCRIPT-INFO: SUCCESS: Prefix 192.168.90.1/32 found with protocol 'connected'.
+2026-11-03T15:56:05: %SCRIPT-INFO: SUCCESS: Prefix 192.168.90.2/32 found with protocol 'ospf'.
+2026-11-03T15:56:05: %SCRIPT-INFO: SUCCESS: Prefix 192.168.90.5/32 found with protocol 'ospf'.
+2026-11-03T15:56:05: %SCRIPT-INFO: Validating routing table on R2
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 10.10.10.0/30 found with protocol 'connected'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 10.10.10.4/30 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 10.10.10.8/30 found with protocol 'connected'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 11.0.0.0/24 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 12.0.0.0/24 found with protocol 'connected'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 13.0.0.0/24 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 192.168.134.0/24 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 192.168.90.1/32 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 192.168.90.2/32 found with protocol 'connected'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 192.168.90.5/32 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: Validating routing table on R3
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 10.10.10.0/30 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 10.10.10.4/30 found with protocol 'connected'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 10.10.10.8/30 found with protocol 'connected'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 11.0.0.0/24 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 12.0.0.0/24 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 13.0.0.0/24 found with protocol 'connected'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 192.168.134.0/24 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 192.168.90.1/32 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 192.168.90.2/32 found with protocol 'ospf'.
+2026-11-03T15:56:06: %SCRIPT-INFO: SUCCESS: Prefix 192.168.90.5/32 found with protocol 'connected'.
+2026-11-03T15:56:06: %AETEST-INFO: Passed reason: All routing table validations passed successfully.
+2026-11-03T15:56:06: %AETEST-INFO: The result of section test_routing_table is => PASSED
+2026-11-03T15:56:06: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:06: %AETEST-INFO: |                           Starting section cleanup                           |
+2026-11-03T15:56:06: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:07: %SCRIPT-INFO: Disconnecting from R1
+2026-11-03T15:56:18: %SCRIPT-INFO: Disconnecting from R2
+2026-11-03T15:56:29: %SCRIPT-INFO: Disconnecting from R3
+2026-11-03T15:56:40: %AETEST-INFO: The result of section cleanup is => PASSED
+2026-11-03T15:56:40: %AETEST-INFO: The result of testcase RoutingTableValidation is => PASSED
+2026-11-03T15:56:40: %EASYPY-INFO: Starting task execution: reachability
+2026-11-03T15:56:40: %EASYPY-INFO:     test harness = pyats.aetest
+2026-11-03T15:56:40: %EASYPY-INFO:     testscript   = /home/omokida/100days-pyats/network_validation_pyATS/tests/test_reachability.py
+<module 'pyats.aetest.testscript.test_reachability' from '/home/omokida/100days-pyats/network_validation_pyATS/tests/test_reachability.py'>
+2026-11-03T15:56:40: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:40: %AETEST-INFO: |                    Starting testcase EndToEndReachability                    |
+2026-11-03T15:56:40: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:40: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:40: %AETEST-INFO: |                         Starting section setup_test                          |
+2026-11-03T15:56:40: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:49: %AETEST-INFO: The result of section setup_test is => PASSED
+2026-11-03T15:56:49: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:49: %AETEST-INFO: |                 Starting section test_loopback_reachability                  |
+2026-11-03T15:56:49: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:49: %SCRIPT-INFO: Ping R1 (Loopback0) -> R2 (192.168.90.2)
+2026-11-03T15:56:50: %SCRIPT-INFO: SUCCESS: R1 -> R2 (192.168.90.2) 100%
+2026-11-03T15:56:50: %SCRIPT-INFO: Ping R1 (Loopback0) -> R3 (192.168.90.5)
+2026-11-03T15:56:51: %SCRIPT-INFO: SUCCESS: R1 -> R3 (192.168.90.5) 100%
+2026-11-03T15:56:51: %SCRIPT-INFO: Ping R2 (Loopback0) -> R1 (192.168.90.1)
+2026-11-03T15:56:52: %SCRIPT-INFO: SUCCESS: R2 -> R1 (192.168.90.1) 100%
+2026-11-03T15:56:52: %SCRIPT-INFO: Ping R2 (Loopback0) -> R3 (192.168.90.5)
+2026-11-03T15:56:52: %SCRIPT-INFO: SUCCESS: R2 -> R3 (192.168.90.5) 100%
+2026-11-03T15:56:52: %SCRIPT-INFO: Ping R3 (Loopback0) -> R1 (192.168.90.1)
+2026-11-03T15:56:53: %SCRIPT-INFO: SUCCESS: R3 -> R1 (192.168.90.1) 100%
+2026-11-03T15:56:53: %SCRIPT-INFO: Ping R3 (Loopback0) -> R2 (192.168.90.2)
+2026-11-03T15:56:54: %SCRIPT-INFO: SUCCESS: R3 -> R2 (192.168.90.2) 100%
+2026-11-03T15:56:54: %AETEST-INFO: Passed reason: All loopback reachability checks passed.
+2026-11-03T15:56:54: %AETEST-INFO: The result of section test_loopback_reachability is => PASSED
+2026-11-03T15:56:54: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:54: %AETEST-INFO: |                           Starting section cleanup                           |
+2026-11-03T15:56:54: %AETEST-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:56:54: %SCRIPT-INFO: Disconnecting from R1
+2026-11-03T15:57:06: %SCRIPT-INFO: Disconnecting from R2
+2026-11-03T15:57:17: %SCRIPT-INFO: Disconnecting from R3
+2026-11-03T15:57:28: %AETEST-INFO: The result of section cleanup is => PASSED
+2026-11-03T15:57:28: %AETEST-INFO: The result of testcase EndToEndReachability is => PASSED
+2026-11-03T15:57:28: %CONTRIB-INFO: WebEx Token not given as argument or in config. No WebEx notification will be sent
+2026-11-03T15:57:28: %GENIE-INFO: Saving Abstract Tree...
+2026-11-03T15:57:28: %GENIE-INFO: Abstract Tree saved
+2026-11-03T15:57:28: %EASYPY-INFO: --------------------------------------------------------------------------------
+2026-11-03T15:57:28: %EASYPY-INFO: Job finished. Wrapping up...
+2026-11-03T15:57:29: %EASYPY-INFO: Creating archive file: /home/omokida/.pyats/archive/26-11/validation_job_2026Nov03_15_53_22_725327.zip
+2026-11-03T15:57:29: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:57:29: %EASYPY-INFO: |                                Easypy Report                                 |
+2026-11-03T15:57:29: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:57:29: %EASYPY-INFO: pyATS Instance   : /home/omokida/100days-pyats/venv
+2026-11-03T15:57:29: %EASYPY-INFO: Python Version   : cpython-3.12.3 (64bit)
+2026-11-03T15:57:29: %EASYPY-INFO: CLI Arguments    : /home/omokida/100days-pyats/venv/bin/pyats run job jobs/validation_job.py --testbed-file testbed/testbed.yaml
+2026-11-03T15:57:29: %EASYPY-INFO: User             : omokida
+2026-11-03T15:57:29: %EASYPY-INFO: Host Server      : machine
+2026-11-03T15:57:29: %EASYPY-INFO: Host OS Version  : Ubuntu 24.04 noble (x86_64)
+2026-11-03T15:57:29: %EASYPY-INFO: 
+2026-11-03T15:57:29: %EASYPY-INFO: Job Information
+2026-11-03T15:57:29: %EASYPY-INFO:     Name         : validation_job
+2026-11-03T15:57:29: %EASYPY-INFO:     Result       : PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     Start time   : 2026-11-03 15:53:32.209076+00:00
+2026-11-03T15:57:29: %EASYPY-INFO:     Stop time    : 2026-11-03 15:57:28.511417+00:00
+2026-11-03T15:57:29: %EASYPY-INFO:     Elapsed time : 0:03:57
+2026-11-03T15:57:29: %EASYPY-INFO:     Archive      : /home/omokida/.pyats/archive/26-11/validation_job_2026Nov03_15_53_22_725327.zip
+2026-11-03T15:57:29: %EASYPY-INFO: 
+2026-11-03T15:57:29: %EASYPY-INFO: Total Tasks    : 5 
+2026-11-03T15:57:29: %EASYPY-INFO: 
+2026-11-03T15:57:29: %EASYPY-INFO: Overall Stats
+2026-11-03T15:57:29: %EASYPY-INFO:     Passed     : 5
+2026-11-03T15:57:29: %EASYPY-INFO:     Passx      : 0
+2026-11-03T15:57:29: %EASYPY-INFO:     Failed     : 0
+2026-11-03T15:57:29: %EASYPY-INFO:     Aborted    : 0
+2026-11-03T15:57:29: %EASYPY-INFO:     Blocked    : 0
+2026-11-03T15:57:29: %EASYPY-INFO:     Skipped    : 0
+2026-11-03T15:57:29: %EASYPY-INFO:     Errored    : 0
+2026-11-03T15:57:29: %EASYPY-INFO: 
+2026-11-03T15:57:29: %EASYPY-INFO:     TOTAL      : 5
+2026-11-03T15:57:29: %EASYPY-INFO: 
+2026-11-03T15:57:29: %EASYPY-INFO: Success Rate   : 100.00 %
+2026-11-03T15:57:29: %EASYPY-INFO: 
+2026-11-03T15:57:29: %EASYPY-INFO: Section Stats
+2026-11-03T15:57:29: %EASYPY-INFO:     Passed     : 15
+2026-11-03T15:57:29: %EASYPY-INFO:     Passx      : 0
+2026-11-03T15:57:29: %EASYPY-INFO:     Failed     : 0
+2026-11-03T15:57:29: %EASYPY-INFO:     Aborted    : 0
+2026-11-03T15:57:29: %EASYPY-INFO:     Blocked    : 0
+2026-11-03T15:57:29: %EASYPY-INFO:     Skipped    : 0
+2026-11-03T15:57:29: %EASYPY-INFO:     Errored    : 0
+2026-11-03T15:57:29: %EASYPY-INFO: 
+2026-11-03T15:57:29: %EASYPY-INFO:     TOTAL      : 15
+2026-11-03T15:57:29: %EASYPY-INFO: 
+2026-11-03T15:57:29: %EASYPY-INFO: Section Success Rate   : 100.00 %
+2026-11-03T15:57:29: %EASYPY-INFO: 
+2026-11-03T15:57:29: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:57:29: %EASYPY-INFO: |                             Task Result Summary                              |
+2026-11-03T15:57:29: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:57:29: %EASYPY-INFO: connectivity: test_connectivity                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: connectivity: test_connectivity.TestConnectivity                          PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: interfaces: test_interfaces                                               PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: interfaces: test_interfaces.InterfaceValidation                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: ospf: test_ospf                                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: ospf: test_ospf.OSPFValidation                                            PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: routing: test_routing                                                     PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: routing: test_routing.RoutingTableValidation                              PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: reachability: test_reachability                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: reachability: test_reachability.EndToEndReachability                      PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: 
+2026-11-03T15:57:29: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:57:29: %EASYPY-INFO: |                             Task Result Details                              |
+2026-11-03T15:57:29: %EASYPY-INFO: +------------------------------------------------------------------------------+
+2026-11-03T15:57:29: %EASYPY-INFO: connectivity: test_connectivity                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: `-- TestConnectivity                                                      PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     |-- setup_test                                                        PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     |-- connectivity                                                      PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     `-- cleanup                                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: interfaces: test_interfaces                                               PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: `-- InterfaceValidation                                                   PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     |-- setup_test                                                        PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     |-- test_interfaces                                                   PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     `-- cleanup                                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: ospf: test_ospf                                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: `-- OSPFValidation                                                        PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     |-- setup_test                                                        PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     |-- test_ospf_validation                                              PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     `-- cleanup                                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: routing: test_routing                                                     PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: `-- RoutingTableValidation                                                PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     |-- setup_test                                                        PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     |-- test_routing_table                                                PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     `-- cleanup                                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: reachability: test_reachability                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: `-- EndToEndReachability                                                  PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     |-- setup_test                                                        PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     |-- test_loopback_reachability                                        PASSED
+2026-11-03T15:57:29: %EASYPY-INFO:     `-- cleanup                                                           PASSED
+2026-11-03T15:57:29: %EASYPY-INFO: Sending report email...
+2026-11-03T15:57:29: %EASYPY-INFO: Missing SMTP server configuration, or failed to reach/authenticate/send mail. Result notification email failed to send.
+2026-11-03T15:57:29: %EASYPY-INFO: Done!
+
+Pro Tip
+-------[33m
+    Did you hear? You can now make revisions to existing parsers! Follow the link to find out more:
+        https://pubhub.devnetcloud.com/media/pyats-development-guide/docs/writeparser/writeparser.html#revising-a-parser
+[0m[39m

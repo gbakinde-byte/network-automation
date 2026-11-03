@@ -1,26 +1,28 @@
 ---
-
-- name: Checking New Configuration
+- name: Verify OSPF deployment
   hosts: routers
   gather_facts: false
 
   tasks:
-    - name: Show interfaces
+    - name: Collect interface, neighbor and route information
       cisco.ios.ios_command:
         commands:
           - show ip interface brief
-      register: intf_output
-
-    - name: Display router version
-      ansible.builtin.debug:
-        var: intf_output.stdout
-
-    - name: Show OSPF information
-      cisco.ios.ios_command:
-        commands:
+          - show ip ospf neighbor
           - show ip route ospf
-      register: ospf_output
+      register: result
 
-    - name: Display OSPF Routes
+    - name: Display OSPF neighbors
       ansible.builtin.debug:
-        var: ospf_output.stdout
+        var: result.stdout_lines[1]
+
+    - name: Display OSPF routes
+      ansible.builtin.debug:
+        var: result.stdout_lines[2]
+
+    - name: Assert the expected number of FULL OSPF neighbors
+      ansible.builtin.assert:
+        that:
+          - "(result.stdout[1] | regex_findall('FULL') | length) == (expected_ospf_neighbors | int)"
+        success_msg: "{{ inventory_hostname }} has {{ expected_ospf_neighbors }} FULL OSPF neighbors"
+        fail_msg: "{{ inventory_hostname }} does not have {{ expected_ospf_neighbors }} FULL OSPF neighbors"

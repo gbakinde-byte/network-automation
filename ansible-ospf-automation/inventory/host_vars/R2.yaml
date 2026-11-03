@@ -5,5 +5,4 @@ ospf_router_id: "2.2.2.2"
 passive_interfaces:
   - "Loopback0"
   - "GigabitEthernet0/2"
-  - "Loopback100"
-  - "Loopback200"
+  

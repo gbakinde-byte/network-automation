@@ -1,0 +1,61 @@
+routers:
+  R1:
+    interfaces:
+    - name: "GigabitEthernet0/0"
+      ip_address: 192.168.134.130
+      status: "up"
+      protocol: "up"
+    - name: "GigabitEthernet0/1"
+      ip_address: 10.10.10.1
+      status: "up"
+      protocol: "up"
+    - name: "GigabitEthernet0/2"
+      ip_address: 10.10.10.5
+      status: "up"
+      protocol: "up"
+    - name: "GigabitEthernet0/3"
+      ip_address: "11.0.0.1"
+      status: "up"
+      protocol: "up"
+    - name: "Loopback0"
+      ip_address: "192.168.90.1"
+      status: "up"
+      protocol: "up"
+
+  R2:
+    interfaces:
+    - name: "GigabitEthernet0/0"
+      ip_address: "10.10.10.2"
+      status: "up"
+      protocol: "up"
+    - name: "GigabitEthernet0/1"
+      ip_address: "10.10.10.9"
+      status: "up"
+      protocol: "up"
+    - name: "GigabitEthernet0/2"
+      ip_address: "12.0.0.1"
+      status: "up"
+      protocol: "up"
+    - name: "Loopback0"
+      ip_address: "192.168.90.2"
+      status: "up"
+      protocol: "up"
+
+  R3:
+    interfaces:
+    - name: "GigabitEthernet0/0"
+      ip_address: "10.10.10.6"
+      status: "up"
+      protocol: "up"
+    - name: "GigabitEthernet0/1"
+      ip_address: "10.10.10.10"
+      status: "up"
+      protocol: "up"
+    - name: "GigabitEthernet0/2"
+      ip_address: "13.0.0.1"
+      status: "up"
+      protocol: "up"
+    - name: "Loopback0"
+      ip_address: "192.168.90.5"
+      status: "up"
+      protocol: "up"
