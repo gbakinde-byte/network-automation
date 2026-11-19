@@ -2,6 +2,9 @@
 
 A four-router BGP lab built in GNS3 (Cisco IOSv), with an Ansible role to deploy the BGP configuration and a pyATS test suite to validate it. A customer AS is dual-homed to two ISPs, with path control, route filtering and a failover test.
 
+![BGP topology](images/bgp_post_image.png)
+
+
 ## Topology
 
 ```mermaid
