@@ -8,4 +8,3 @@ ibgp_peers:
   - peer_ip: "1.1.1.1"
     update_source: "Loopback0"
 advertise_ip: "192.168.20.0"
-#advertise_mask: "255.255.255.0"

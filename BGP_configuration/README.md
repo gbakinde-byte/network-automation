@@ -119,9 +119,9 @@ Run the playbook twice: the second run should report `changed=0` on every router
 ## Status
 
 - [x] Lab built and configured through the failover test
-- [ ] Ansible deployment tested end to end
-- [ ] pyATS validation tested end to end
-- [ ] Break-and-fix troubleshooting scenarios
+- [x] Ansible deployment tested end to end
+- [x] pyATS validation tested end to end
+- [x] Break-and-fix troubleshooting scenarios
 
 ## What I learned
 

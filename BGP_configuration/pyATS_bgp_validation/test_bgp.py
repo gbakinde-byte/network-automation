@@ -19,7 +19,6 @@ EXPECTED_ROUTES = {
     "R4": ["172.16.30.0/24", "192.168.10.0/24", "192.168.20.0/24"],
 }
 
-# e.g. "10.0.13.2   4   65002   45   45   6   0   0 00:36:12   3"
 SUMMARY_LINE = re.compile(
     r"^(\d+\.\d+\.\d+\.\d+)\s+4\s+(\d+)\s+\d+\s+\d+\s+\d+\s+\d+\s+\d+\s+\S+\s+(\S+)\s*$",
     re.MULTILINE,
@@ -52,7 +51,7 @@ class BGPValidation(aetest.Testcase):
                 remote_as, state = found[ip]
                 if remote_as != asn:
                     problems.append(f"{name}: {ip} is AS {remote_as}, expected {asn}")
-                if not state.isdigit():  # a number of prefixes means Established
+                if not state.isdigit(): 
                     problems.append(f"{name}: {ip} is not Established (state: {state})")
         if problems:
             self.failed("\n".join(problems))
@@ -80,7 +79,6 @@ class CommonCleanup(aetest.CommonCleanup):
     @aetest.subsection
     def disconnect(self, testbed):
         for device in testbed.devices.values():
-#            if device.connected:
                 device.disconnect()
 
 
