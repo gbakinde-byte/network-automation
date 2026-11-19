@@ -1,0 +1,11 @@
+---
+as_number: 65001
+bgp_router_id: "2.2.2.2"
+bgp_neighbor:
+  - bgp_neighbor_ip: "10.0.24.2"
+    as_number_neighbor: 65003
+ibgp_peers:
+  - peer_ip: "1.1.1.1"
+    update_source: "Loopback0"
+advertise_ip: "192.168.20.0"
+#advertise_mask: "255.255.255.0"

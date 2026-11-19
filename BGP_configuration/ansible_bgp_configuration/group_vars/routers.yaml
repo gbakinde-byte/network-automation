@@ -1,0 +1,8 @@
+---
+ansible_connection: ansible.netcommon.network_cli
+ansible_network_os: cisco.ios.ios
+ansible_user: "{{ lookup('env', 'ANSIBLE_USER') }}"
+ansible_password: "{{ lookup('env', 'ANSIBLE_PASS') }}"
+ansible_command_timeout: 180
+ansible_connect_timeout: 60
+ansible_ssh_common_args: "-o PubkeyAcceptedKeyTypes=+ssh-rsa -o HostKeyAlgorithms=+ssh-rsa"

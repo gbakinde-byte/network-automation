@@ -1,0 +1,10 @@
+---
+- name: Apply BGP configuration from a Jinja2 template
+  hosts: routers
+  gather_facts: false
+
+  tasks:
+    - name: Push BGP configuration
+      cisco.ios.ios_config:
+        src: bgp_config.j2
+        save_when: modified

@@ -1,0 +1,11 @@
+router bgp {{ as_number }}
+ bgp router-id {{ bgp_router_id }}
+{% for nbr in bgp_neighbor | default([]) %}
+ neighbor {{ nbr.bgp_neighbor_ip }} remote-as {{ nbr.as_number_neighbor }}
+{% endfor %}
+{% for peer in ibgp_peers | default([]) %}
+ neighbor {{ peer.peer_ip }} remote-as {{ as_number }}
+ neighbor {{ peer.peer_ip }} update-source {{ peer.update_source }}
+ neighbor {{ peer.peer_ip }} next-hop-self
+{% endfor %}
+ network {{ advertise_ip }}{% if advertise_mask is defined %} mask {{ advertise_mask }}{% endif %}

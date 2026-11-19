@@ -1,0 +1,10 @@
+---
+as_number: 65003
+bgp_router_id: "4.4.4.4"
+bgp_neighbor:
+  - bgp_neighbor_ip: "10.0.24.1"
+    as_number_neighbor: 65001
+  - bgp_neighbor_ip: "10.0.34.1"
+    as_number_neighbor: 65002
+advertise_ip: "172.16.40.0"
+advertise_mask: "255.255.255.0"
